@@ -1,5 +1,4 @@
 DROP database IF exists olimpiada;
-
 CREATE database olimpiada;
 
 CREATE Table olimpiada.Persona(
@@ -10,35 +9,33 @@ CREATE Table olimpiada.Persona(
 );
 
 CREATE TABLE olimpiada.Local(  
-    Sucursal int primary key,
+    idSucursal int primary key,
     Nombre VARCHAR(60) NOT NULL,
-    idPersona INT NOT NULL FOREIGN KEY,
-    idEntrada INT NOT NULL FOREIGN KEY,
-    idSalida INT NOT NULL FOREIGN KEY,
+    DNI INT NOT NULL,
+    idEntrada INT NOT NULL,
+    idSalida INT NOT NULL,
     Direccion VARCHAR(60) NOT NULL, 
     CantMax INT NOT NULL, 
-    constraint Local_Persona FOREIGN KEY (idPersona) REFERENCES olimpiada.Persona (DNI),
-    constraint Local_Entrada FOREIGN KEY (idEntrada) REFERENCES olimpiada.Entrada (Local),
-    constraint Local_Salida FOREIGN KEY (idSalida) REFERENCES olimpiada.Salida (Local),
+    constraint Local_Persona FOREIGN KEY (DNI) REFERENCES olimpiada.Persona (DNI)
 );
 
 CREATE Table olimpiada.Entrada (
-    Local INT NOT NULL,  
+    idLocal INT NOT NULL,  
     fechaHora Date NOT NULL, 
-    PRIMARY key (Local, fechaHora),
-    constraint Entrada_Local FOREIGN KEY (Local) REFERENCES olimpiada.Local (Sucursal)
+    PRIMARY key (idLocal, fechaHora),
+    constraint Entrada_Local FOREIGN KEY (idLocal) REFERENCES olimpiada.Local (idSucursal)
 ); 
 
 CREATE Table olimpiada.Salida (
-    Local INT NOT NULL FOREIGN KEY,
+    idLocal INT NOT NULL,
     fechaHora Date NOT NULL,
-    PRIMARY key (Local, fechaHora),
-    constraint Salida_Local FOREIGN KEY (Local) REFERENCES olimpiada.Local (Sucursal)
+    PRIMARY key (idLocal, fechaHora),
+    constraint Salida_Local FOREIGN KEY (idLocal) REFERENCES olimpiada.Local (idSucursal)
 );
 
 CREATE Table olimpiada.Registro(
-    Local int NOT NULL, 
+    idLocal int NOT NULL, 
     fechaHora Date NOT NULL,
-    PRIMARY key(Local, fechaHora),
-    constraint Registro_Local FOREIGN KEY (Local) REFERENCES olimpiada.Local(Sucursal),
+    PRIMARY key(idLocal, fechaHora),
+    constraint Registro_Local FOREIGN KEY (idLocal) REFERENCES olimpiada.Local(idSucursal)
 );
