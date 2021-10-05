@@ -47,12 +47,27 @@ namespace Olimpiada.Core
 
         public int Disponiblidad()
         {
-            
+             int disponiblidad;
+
+            disponiblidad = CantMax - (Entrada.count - Salida.count);
+
+            return disponiblidad;
         }
 
         public bool PuedeIngreso()
         {
-            
+             if(disponiblidad => 1)
+            {
+                Console.WriteLine("Entrada habilitada");
+
+                return true; 
+            }
+            else
+            {
+               Console.WriteLine("Entrada no habilitada");
+
+               return false; 
+            }
         }
     }
 }

@@ -16,5 +16,8 @@ namespace Olimpiada.Core
         public Persona()
         {}
 
+        public string MostrarDatos(Registro Registro)
+        {
+        }
     }
 }

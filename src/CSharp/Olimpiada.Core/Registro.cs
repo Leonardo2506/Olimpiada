@@ -16,5 +16,14 @@ namespace Olimpiada.Core
         {
             FechaHora = fechaHora;
         }
+
+        
+        public void HorarioMas()
+        {
+        }
+
+        public void HorarioMenos()
+        {
+        }
     }
 }
