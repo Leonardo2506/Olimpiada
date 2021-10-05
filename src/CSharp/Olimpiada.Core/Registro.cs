@@ -12,18 +12,26 @@ namespace Olimpiada.Core
         public Registro ()
         {
         }
+
         public Registro(DateTime fechaHora)
         {
             FechaHora = fechaHora;
         }
 
-        
-        public void HorarioMas()
+        public void HorarioMas(List<Registro> Entrada)
         {
+            for (int i = 0; i < length; i++)
+            {
+                
+            }
         }
 
-        public void HorarioMenos()
+        public void HorarioMenos(List<Registro> Entrada)
         {
+            for (int i = 0; i < length; i++)
+            {
+                
+            }
         }
     }
 }

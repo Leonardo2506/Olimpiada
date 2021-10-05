@@ -22,7 +22,7 @@ namespace Olimpiada.Core
         List<Registro> Salida {get; set;}
 
 
-        public Local ()
+        public Local()
         {
             Entrada = new List<Registro>{};
 
@@ -47,7 +47,7 @@ namespace Olimpiada.Core
 
         public int Disponiblidad()
         {
-             int disponiblidad;
+            int disponiblidad;
 
             disponiblidad = CantMax - (Entrada.count - Salida.count);
 
@@ -56,7 +56,7 @@ namespace Olimpiada.Core
 
         public bool PuedeIngreso()
         {
-             if(disponiblidad => 1)
+            if(disponiblidad => 1)
             {
                 Console.WriteLine("Entrada habilitada");
 
@@ -64,9 +64,9 @@ namespace Olimpiada.Core
             }
             else
             {
-               Console.WriteLine("Entrada no habilitada");
+                Console.WriteLine("Entrada no habilitada");
 
-               return false; 
+                return false; 
             }
         }
     }
