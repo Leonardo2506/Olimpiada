@@ -15,10 +15,5 @@ namespace Olimpiada.Core
 
         public Persona()
         {}
-
-        public string MostrarDatos(Registro Registro)
-        {
-            Console.WriteLine("Hay {0} cantidad de personas dentro del local, a las {1}", List<Registro>Entrada.count, fechaHora);
-        }
     }
 }

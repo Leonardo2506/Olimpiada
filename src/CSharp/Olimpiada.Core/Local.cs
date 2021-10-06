@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq; 
 
 namespace Olimpiada.Core
 {
@@ -8,8 +9,6 @@ namespace Olimpiada.Core
         public int idSucursal {get; set;}
 
         public string Nombre {get; set;}
-
-        public int DNI {get; set;}
 
         public string Direccion {get; set;}
 
@@ -20,7 +19,6 @@ namespace Olimpiada.Core
         List<Registro> Entrada {get; set;}
 
         List<Registro> Salida {get; set;}
-
 
         public Local()
         {
@@ -49,7 +47,7 @@ namespace Olimpiada.Core
         {
             int disponiblidad;
 
-            disponiblidad = CantMax - (Entrada.count - Salida.count);
+            disponiblidad = CantMax - (Entrada.Count(e=>EsHoy(e)) - Salida.Count(e=>EsHoy(e)));
 
             return disponiblidad;
         }
@@ -68,6 +66,15 @@ namespace Olimpiada.Core
 
                 return false; 
             }
+        }
+
+        public string MostrarDatos(Registro Registro)
+            => ($"Hay {0} cantidad de personas dentro del local, a las {1}", Entrada.count, DateTime.Now);
+
+        private bool EsHoy (DateTime fecha)
+        {
+            var hoy = DateTime.Today;
+            return hoy.Year == fecha.Year && hoy.Month == fecha.Month && hoy.Day == fecha.Day;
         }
     }
 }
