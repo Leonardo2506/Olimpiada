@@ -69,7 +69,7 @@ namespace Olimpiada.Core
         }
 
         public string MostrarDatos(Registro Registro)
-            => ($"Hay {0} cantidad de personas dentro del local, a las {1}", Entrada.count, DateTime.Now);
+            => ($"Hay {0} cantidad de personas dentro del local, a las {1}", Ingreso.count, DateTime.Now);
 
         private bool EsHoy (DateTime fecha)
         {
