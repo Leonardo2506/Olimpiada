@@ -76,5 +76,21 @@ namespace Olimpiada.Core
             var hoy = DateTime.Today;
             return hoy.Year == fecha.Year && hoy.Month == fecha.Month && hoy.Day == fecha.Day;
         }
+
+        public void HorarioMas(List<Registro> Entrada)
+        {
+            for (int i = 0; i < length; i++)
+            {
+                
+            }
+        }
+
+        public void HorarioMenos(List<Registro> Entrada)
+        {
+            for (int i = 0; i < length; i++)
+            {
+                
+            }
+        }
     }
 }
